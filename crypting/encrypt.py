@@ -15,10 +15,9 @@ class Encrypt():
             
             data_file = data_file.read()
         key_id = Fernet.generate_key()
-        print(type(key_id))
         key = Fernet(key_id)
         token = key.encrypt(data_file)
-        print(token)
+        
         with open("data.txt", "w") as j:
             j.write(str(token))
             
